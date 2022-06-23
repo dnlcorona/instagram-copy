@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap');
 
+:root {
+  --primary-bg: rgb(243, 243, 243);
+  --border: lightgray;
+  --after-before: #a8a8b3;
+  --container: #FFF;
+  --text: black;
+}
+
+body.active {
+  --primary-bg: #09090A;
+  --border: #323238;
+  --after-before: #323238;
+  --container: #121214;
+  --input-bg: #121214;
+  --text: #FFF;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +29,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: rgb(243, 243, 243);
+  background-color: var(--primary-bg);
   margin: 0;
   padding: 0;
   display: flex;
@@ -54,6 +71,7 @@ body {
 .instagram-login p:nth-of-type(2) {
   color: #00376B;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .instagram-login {
@@ -61,11 +79,11 @@ body {
   align-items: center; /* horizontal */
   justify-content: space-around; /* vertical */
   flex-direction: column;
-  border: 1px solid lightgray;
+  border: 1px solid var(--border);
   padding: 1.3rem 2rem;
   width: 300px;
   height: 365px;
-  background-color: #ffffff;
+  background-color: var(--container);
 }
 
 .instagram-login p {
@@ -77,6 +95,7 @@ body {
 
 .instagram-login p:first-of-type {
   text-transform: uppercase;
+  color: var(--text);
 }
 
 .instagram-login p:first-of-type:after {
@@ -84,7 +103,7 @@ body {
   flex: 1;
   height: 1px;
   width: 104px;
-  background: #a8a8b3;
+  background: var(--after-before);
   margin-left: 16px;
 }
 
@@ -93,16 +112,20 @@ body {
   flex: 1;
   height: 1px;
   width: 104px;
-  background: #a8a8b3;
+  background: var(--after-before);
   margin-right: 16px;
 }
 
 .instagram-cadaster {
   text-align: center;
-  border: 1px solid lightgray;
+  border: 1px solid var(--border);
   padding: 20px;
   margin-top: 12px;
-  background-color: #fff;
+  background-color: var(--container);
+}
+
+.instagram-cadaster p {
+  color: var(--text);
 }
 
 .instagram-cadaster p a {
@@ -110,8 +133,6 @@ body {
   font-weight: 500;
   margin-left: 5px;
 }
-
-
 
 main {
   display: flex;
@@ -128,8 +149,9 @@ form {
 
 form input {
   width: 240px;
-  border: 1px solid lightgray;
+  border: 1px solid var(--border);
   padding: 10px;
+  background-color: var(--input-bg);
 }
 
 form input[type=button] {
@@ -142,11 +164,9 @@ form input[type=button] {
   width: 260px;
 }
 
-
-
-
 .instagram-mobile-apps img{
-  width: 150px
+  width: 150px;
+  cursor: pointer;
 }
 
 .instagram-mobile-apps {
@@ -156,4 +176,23 @@ form input[type=button] {
 .instagram-mobile-apps p {
   text-align: center;
   margin: 20px 0 10px 0;
+  color: var(--text);
+}
+
+.dark-light #light-mode {
+  display: none;
+}
+
+.dark-light i .active {
+  display: block;
+}
+
+.dark-light i {
+  font-size: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 30px 60px 0 0;
+  cursor: pointer;
+  color: #0095F6;
 }
